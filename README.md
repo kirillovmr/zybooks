@@ -4,7 +4,7 @@
 
 ![ZyBooks logo](https://learn.zybooks.com/zycommon-web/assets/logo.svg "ZyBooks logo")
 
-Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check whether assognment is correct or no, I found an ability to intercept and modify outgoing requests. Therefore, all ZyBooks assignment (except those are checked manually) could be passed with this extension.
+Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check whether assignment is correct or no, I found an ability to intercept and modify outgoing requests. Therefore, all ZyBooks assignment (except those are checked manually) could be passed with this extension.
 
 
 ## Features
@@ -18,17 +18,21 @@ Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check w
 This is a chrome extension, it is not published to Chrome WebStore, therefore you need to install it manually.
 
 Download build *[Not yet]*:
+
 Download build_latest.zip, extract, go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+
 Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 **OR**
 
 Download project and compile:
-Download [this repo](), extract, open the terminal window in project directory, run
+
+Download [this repo](https://github.com/kirillovmr/zybooks-hack/archive/master.zip), extract, open the terminal window in project directory, run
 ```js
 npm run build
 ```
 Then go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+
 Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 
