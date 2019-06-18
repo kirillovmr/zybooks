@@ -23,15 +23,7 @@ const successNotification = () => chrome.notifications.create('success', {
     title: "Task hacked :)",
     message: "Task was successfully hacked!\nReload page to see the results.",
     iconUrl: logo,
-}, () => setTimeout(() => {
-    chrome.notifications.clear("success", null)
-
-    // Gather all notifications
-    chrome.notifications.getAll((n) => {
-        // console.log('Notifications', n);
-        Object.keys(n).forEach(key => chrome.notifications.clear(key, null))
-    })
-}, 2500));
+}, () => setTimeout(() => chrome.notifications.clear("success", null), 2500));
 const alreadyProcessingNotification = () => chrome.notifications.create('processing', {
     type: "basic",
     title: "Please wait",
@@ -151,8 +143,8 @@ console.log("ZyBooks hack loaded successfully!");
 
                 // Delayed loop
                 state.processing = true;
-                chrome.notifications.create('request', {...progressNotif, progress: 0}, null);
                 var i = 0, howManyTimes = 10;
+                chrome.notifications.create('request', {...progressNotif, progress: 0}, () => setTimeout(() => chrome.notifications.clear("request", null), howManyTimes*1000));
                 function f() {
                     // Sending requests
                     send_req(savedHeaders, JSON.stringify({...payload, part: i, complete: true}), i);
