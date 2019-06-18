@@ -18,7 +18,7 @@ Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check w
 This is a chrome extension, it is not published to Chrome WebStore, therefore you need to install it manually.
 
 Download latest build:
-  1. Download [latest build](https://github.com/kirillovmr/zybooks-hack/releases/download/1.0.0/zybooks-hack.zip).
+  1. Download [latest build](https://github.com/kirillovmr/zybooks-hack/releases/latest).
   2. Extract on local machine.
   3. Go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
   4. Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
