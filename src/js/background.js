@@ -23,12 +23,28 @@ const successNotification = () => chrome.notifications.create('success', {
     title: "Task hacked :)",
     message: "Task was successfully hacked!\nReload page to see the results.",
     iconUrl: logo,
-}, () => setTimeout(() => chrome.notifications.clear("success", null), 2500));
+}, () => setTimeout(() => {
+    chrome.notifications.clear("success", null)
+
+    // Gather all notifications
+    chrome.notifications.getAll((n) => {
+        // console.log('Notifications', n);
+        Object.keys(n).forEach(key => chrome.notifications.clear(key, null))
+    })
+}, 2500));
+const alreadyProcessingNotification = () => chrome.notifications.create('processing', {
+    type: "basic",
+    title: "Please wait",
+    message: "Wait until previous task is processed!",
+    priority: 0,
+    iconUrl: logo,
+}, () => setTimeout(() => chrome.notifications.clear("processing", null), 2500));
 
 var progressNotif = {
     type: "progress",
     title: "Processing...",
     message: "Hacking in progress...",
+    priority: 2,
     iconUrl: logo,
 };
 var iterErrorNotif = {
@@ -42,7 +58,8 @@ var iterErrorNotif = {
 const reqInitiator = "https://learn.zybooks.com";
 const urlPattern = "*://*.zybooks.com/*";
 let state = {
-    enabled: true
+    enabled: true,
+    processing: false
 };
 
 const setIcon = (state) => chrome.browserAction.setIcon({path: state ? "icon34-01.png": "icon34-02.png"});
@@ -129,7 +146,11 @@ console.log("ZyBooks hack loaded successfully!");
                     headers: details.requestHeaders
                 };
 
+                // Checking for active current task
+                if (state.processing) return alreadyProcessingNotification();
+
                 // Delayed loop
+                state.processing = true;
                 chrome.notifications.create('request', {...progressNotif, progress: 0}, null);
                 var i = 0, howManyTimes = 10;
                 function f() {
@@ -141,6 +162,7 @@ console.log("ZyBooks hack loaded successfully!");
                     } else {
                         chrome.notifications.clear('request', null);
                         successNotification();
+                        state.processing = false;
                     }
                 }
                 f();
