@@ -1,6 +1,6 @@
 {
   "name": "zybooks-hack",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Ultimate ZyBooks assignment solver. Open assignments section, press 'show answer', wait confirmation, reload.",
   "scripts": {
     "build": "node utils/build.js",
