@@ -17,23 +17,19 @@ Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check w
 ## Installation
 This is a chrome extension, it is not published to Chrome WebStore, therefore you need to install it manually.
 
-Download build *[Not yet]*:
-
-Download build_latest.zip, extract, go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
-
-Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
+1. Download build *[Not yet]*:
+  Download build_latest.zip, extract, go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+  Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 **OR**
 
-Download project and compile:
-
-Download [this repo](https://github.com/kirillovmr/zybooks-hack/archive/master.zip), extract, open the terminal window in project directory, run
+2. Download project and compile:
+  Download [this repo](https://github.com/kirillovmr/zybooks-hack/archive/master.zip), extract, open the terminal window in project directory, run
 ```js
 npm run build
 ```
-Then go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
-
-Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
+  Then go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+  Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 
 ## Usage
