@@ -1,0 +1,17 @@
+{
+  "name": "ZyBooks Hack",
+  "background": {
+    "scripts": ["background.bundle.js"]
+  },
+  "browser_action": {
+    "default_icon": "icon34-01.png"
+  },
+  "icons": {
+    "128": "icon128-01.png"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "*://*.zybooks.com/*","webRequest","webRequestBlocking","notifications","storage"
+  ]
+}
