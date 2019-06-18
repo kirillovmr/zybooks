@@ -11,25 +11,30 @@ Because that [ZyBooks](https://www.zybooks.com/) uses its client part to check w
 
 1. Press the extension icon to enable / disable requests interception.
 2. Explicit notification to keep track of hacking progress.
-3. Passing participation and challange activities.
+3. Passing participation and challenge activities.
 
 
 ## Installation
 This is a chrome extension, it is not published to Chrome WebStore, therefore you need to install it manually.
 
-1. Download build *[Not yet]*:
-  Download build_latest.zip, extract, go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
-  Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
+Download latest build:
+  1. Download [latest build](https://github.com/kirillovmr/zybooks-hack/releases/download/1.0.0/zybooks-hack.zip).
+  2. Extract on local machine.
+  3. Go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+  4. Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 **OR**
 
-2. Download project and compile:
-  Download [this repo](https://github.com/kirillovmr/zybooks-hack/archive/master.zip), extract, open the terminal window in project directory, run
+Download project and compile:
+  1. Download [this repo](https://github.com/kirillovmr/zybooks-hack/archive/master.zip).
+  2. Extract on local machine.
+  3. Open the terminal window in project directory and run:
 ```js
+npm install
 npm run build
 ```
-  Then go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
-  Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
+  4. Go to **Chrome -> Extensions**. Make sure the **Developer Mode** is *ON*.
+  5. Press **Load unpacked** -> Select the build folder on your machine with *manifest.json* file inside.
 
 
 ## Usage
