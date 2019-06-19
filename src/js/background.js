@@ -131,6 +131,9 @@ console.log("ZyBooks hack loaded successfully!");
 
         if (details.initiator == reqInitiator) {
             if (details.url.split('/').reverse()[0] == "activity") {
+
+                if (!payload) return;
+
                 // Saving required headers
                 // console.log("Headers:", details)
                 let savedHeaders = {
@@ -147,6 +150,7 @@ console.log("ZyBooks hack loaded successfully!");
                 chrome.notifications.create('request', {...progressNotif, progress: 0}, () => setTimeout(() => chrome.notifications.clear("request", null), howManyTimes*1000));
                 function f() {
                     // Sending requests
+                    // console.log("Sending req with payload", payload);
                     send_req(savedHeaders, JSON.stringify({...payload, part: i, complete: true}), i);
                     i++;
                     if( i < howManyTimes ){
@@ -154,6 +158,7 @@ console.log("ZyBooks hack loaded successfully!");
                     } else {
                         chrome.notifications.clear('request', null);
                         successNotification();
+                        payload = null;
                         state.processing = false;
                     }
                 }
